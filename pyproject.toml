@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "numberotp"
+version = "0.1.1"
+description = "Official NumberOTP API client — virtual numbers for SMS / OTP verification"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "NumberOTP", email = "support@numberotp.com" }]
+requires-python = ">=3.9"
+dependencies = ["httpx>=0.27,<1"]
+keywords = ["numberotp", "sms", "otp", "virtual number", "phone verification"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Typing :: Typed",
+  "Framework :: AsyncIO",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Development Status :: 4 - Beta",
+]
+
+[project.urls]
+Homepage = "https://www.numberotp.com/developers/sdks"
+Documentation = "https://www.numberotp.com/docs/sdks"
+"API reference" = "https://www.numberotp.com/docs/api"
+Source = "https://github.com/numberotp/numberotp-python"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.24"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["numberotp"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
